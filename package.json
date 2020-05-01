@@ -8,7 +8,9 @@
     "webpack:client": "webpack --config webpack.client.config.js",
     "webpack:server": "webpack --config webpack.server.config.js",
     "webpack": "npm run webpack:client && npm run webpack:server",
-    "benchmark": "NODE_ENV=production bash ./benchmarks/index.sh"
+    "benchmark": "NODE_ENV=production bash ./benchmarks/index.sh",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "keywords": [
     "ssr"
@@ -42,7 +44,8 @@
     "vue": "latest",
     "vue-server-renderer": "latest",
     "xtemplate": "^4.6.0",
-    "xtpl": "^3.3.0"
+    "xtpl": "^3.3.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
@@ -56,5 +59,6 @@
     "marko-loader": "^1.2.0",
     "nodemon": "^1.11.0",
     "webpack": "^1.13.3"
-  }
+  },
+  "snyk": true
 }
